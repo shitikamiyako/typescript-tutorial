@@ -1,9 +1,9 @@
 "use strict";
 // 関数に対する型指定は基本的には返り値で何を返すかで決まる
 // 例えば関数に返り値がない場合はvoid型をつける
-function test(str) {
+var test = function (str) {
     console.log(str);
-}
+};
 test('hello');
 // const add = (a: number, b: number, c: number | string = 10): void => {
 //   console.log(a + b);

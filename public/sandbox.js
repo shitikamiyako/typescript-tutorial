@@ -1,19 +1,22 @@
 "use strict";
-// let greet: Function = () => {
-//   console.log('hello, world');
-// }
-// greet = 'hello';
-// greet = () => {
-//   console.log('hello, again');
-// }
-var add = function (a, b, c /*?*/) {
-    if (c === void 0) { c /*?*/ = 10; }
-    console.log(a + b);
-    console.log(c);
+// いちいちこんな風に型指定するのは面倒くさい。
+var logDetails = function (uid, item) {
+    console.log(item + " has a uid of " + uid);
 };
-add(5, 10, 'ninja');
-var minus = function (a, b) {
-    return a + b;
+var logDetailsAgain = function (uid, item) {
+    console.log(item + " has a uid of " + uid);
 };
-var result = minus(10, 7);
-console.log(result);
+// 今度はこういう例。userオブジェクトの各プロパティに型指定をして引数にしたい。
+var greet = function (user) {
+    console.log(user.name + " says hello");
+};
+var greetAgain = function (user) {
+    console.log(user.name + " says hello. His Uid is " + user.uid);
+};
+logDetails('test', 'testItem');
+var Test = {
+    name: 'Mike',
+    uid: 14
+};
+greetAgain(Test);
+//# sourceMappingURL=sandbox.js.map

@@ -1,4 +1,7 @@
-export class Invoice {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Invoice = void 0;
+class Invoice {
     // readonly client: string;
     // private details: string;
     // public amount: number;
@@ -11,3 +14,5 @@ export class Invoice {
         return `${this.client} owes £${this.amount} for ${this.details}`;
     }
 }
+exports.Invoice = Invoice;
+//# sourceMappingURL=Invoice.js.map

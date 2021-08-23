@@ -1,5 +1,3 @@
-import { Invoice } from './classes/Invoice.js';
-
 // Interfaceはオリジナルの型定義を行うためのもの。ただし、定義とはいうものの宣言的なものである。
 // つまり、以下の例はIsPersonという型を自分で定義して作成するということを行っている。
 interface IsPerson {

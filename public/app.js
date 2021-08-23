@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 // 試しにこの型のオブジェクトを作ってみる。
 const me = {
     name: 'shaun',
@@ -11,16 +10,20 @@ const me = {
         console.log('I spent ', amount);
         return amount;
     },
+    job: 'doctor'
     // 定義とは別のプロパティを作ろうとするとエラーになる
     // skills: [],
 };
 console.log(me);
 me.speak('hello, world');
+// 今度はオブジェクトを引数にしてその値を利用した関数を作ってみる。
 const greetPerson = (person) => {
-    console.log('hello ', person.name);
+    console.log('hello,', person.name);
+    console.log('Your Job is', person.job);
 };
 greetPerson(me);
-//greetPerson({name: 'shaun'});
+// なお、型定義で引数はisPerson型と決まっているので以下はエラーとなる。
+// greetPerson({name: 'shaun'});
 // const form = document.querySelector('.new-item-form') as HTMLFormElement;
 // console.log(form.children);
 // // inputs

@@ -7,6 +7,13 @@ interface IsPerson {
   spend(a: number): number;
 }
 
+// Interfaceの利点はあくまでも宣言的な型定義であるため、あとからプロパティの変更ができるところ。
+// ただし巻き戻しの観点からオブジェクトを作った後にこれをやると全部エラーになるので、次回やるようにInterfaceモジュールとして作ったものをインポートしてそれを拡張するといった使い方になる
+// 以下は試しに追加。後のオブジェクト作成やそれを利用した関数実行が問題ないことから定義の拡張がうまく行ったことが確認できる。
+interface IsPerson {
+  job: string;
+}
+
 // 試しにこの型のオブジェクトを作ってみる。
 const me: IsPerson = {
   name: 'shaun',
@@ -18,6 +25,7 @@ const me: IsPerson = {
     console.log('I spent ', amount);
     return amount;
   },
+  job: 'doctor'
   // 定義とは別のプロパティを作ろうとするとエラーになる
   // skills: [],
 };
@@ -25,9 +33,11 @@ const me: IsPerson = {
 console.log(me);
 me.speak('hello, world');
 
+
 // 今度はオブジェクトを引数にしてその値を利用した関数を作ってみる。
 const greetPerson = (person: IsPerson): void => {
-  console.log('hello ', person.name);
+  console.log('hello,', person.name)
+  console.log('Your Job is', person.job,);
 }
 
 greetPerson(me);

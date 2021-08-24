@@ -9,3 +9,4 @@ export class Payment {
         return `${this.recipient} is owed £${this.amount} for ${this.details}`;
     }
 }
+//# sourceMappingURL=Payment.js.map
